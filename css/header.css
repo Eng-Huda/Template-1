@@ -1,0 +1,79 @@
+ /*  3.0 Header Section */
+ 
+ .header{
+    position: fixed;
+    width:100%;
+	height:10%;
+    z-index:10;
+   
+}
+.header-content{
+   /* overflow:hidden; */
+    /* to solve float problem but we can not use it because of dropdown*/
+}
+.header .logo{
+    width:40%;
+    float : left;
+}
+.header .logo img{
+   width:20%;
+   margin-top:15px;
+}
+.header .nav{
+    width:60%;
+    float : left;
+    text-align:right;
+       
+}
+.header .nav > li{ /*nav children only*/
+    display:inline-block;
+    text-align:right;
+}
+.header .nav > li > a{
+   display:block; /* because padding would not work only from left and right */
+   font-size:15px;
+   padding:30px 10px;
+}
+.header .nav >li> a.active:after,.header .nav >li >a:after{
+    content:"";
+    display:block;
+   margin-top:2px;
+    height:3px;
+    background-color:var(--mainColor);
+    transition:width 0.5s;
+    
+} 
+ .header .nav >li >a.active:after{
+      width:100%;
+ }
+.header .nav >li>  a:after{
+    width:0px;
+   
+} 
+ .header .nav >li a:hover:after{
+     width:100%;
+ }
+ .dropdown{
+     position:relative;
+ }
+ .dropdown-menu{
+     position:absolute;
+     background-color:var(--mainColor);
+     width:150px;
+     text-align:center;
+     left:-50%;
+     top:75%;
+     opacity:0; /* or use display:none;*/
+     visibility:hidden;
+     transition:opacity 0.5s,visibility 0.5s;
+ }
+  .dropdown-menu a{
+      color:var(--whiteColor);
+      display:block;
+      padding:10px;
+      
+  }
+  .dropdown:hover .dropdown-menu{
+      opacity:1; /* or use display:block;*/
+     visibility:visible;
+  }
