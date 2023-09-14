@@ -207,6 +207,7 @@ margin-top:10%;
  .comment-section.active{
 	  border:solid 1px var(--mainColor);
 	  background-color:var(--bg-gray);
+	 margin-top: 5px;
  }
 
 .comment-content{
